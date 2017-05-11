@@ -11,10 +11,6 @@ data:
   data: |
     {
       "virtualServer": {
-        "backend": {
-          "servicePort": 80,
-          "serviceName": "frontend"
-        },
         "frontend": {
           "virtualAddress": {
             "port": 80,
@@ -22,7 +18,18 @@ data:
           },
           "partition": "GKE-test",
           "balance": "round-robin",
-          "mode": "tcp"
+          "mode": "http"
+        },
+        "backend": {
+          "servicePort": 80,
+          "serviceName": "frontend",
+          "healthMonitors": [ {
+            "send": "GET / HTTP/1.0\\r\\n\\r\\n",
+            "interval": 30,
+            "timeout": 20,
+            "protocol": "http"
+            }
+          ]
         }
       }
     }
