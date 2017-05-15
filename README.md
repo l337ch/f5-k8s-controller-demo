@@ -28,7 +28,6 @@ Make sure the controller has be create successfully.
 ```
 kubectl --namespace kube-system rollout status k8s-bigip-ctlr-deployment
 ```
-```
 ### Step 3
 Scale the cluster down to similuate an failed cluster node.
 ```
