@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This demo uses F5's bigip-k8s-ctlr to manaage virtual servers, pools, and nodes on BIG-IPs for services running Kubernetes clusters. More infomation on F5 BIG-IPs can be found here https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/ltm_configuration_guide_10_0_0.html.
+This demo uses F5's bigip-k8s-ctlr to manage virtual servers, pools, and nodes on BIG-IPs for services running on Kubernetes clusters. More infomation on F5 BIG-IPs can be found at https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/ltm_configuration_guide_10_0_0.html.
 The demo below if very high touch. Expect to do a lot of typing. 
 
 ## Prerequisites
@@ -14,7 +14,7 @@ To use this demo you will need the following
 ## Running the demo
 
 ### Step 1
-Create a Kubernetes secrets conataining the BIG-IP username, password, and URL using `kubectl`.
+Using kubectl, create a Kubernetes secret containing the BIG-IP username, password, and URL.
 ```
 kubectl create secret generic bigip-login --namespace kube-system --from-literal=username=BIG-IP_USERNAME--from-literal=password=PASSWORD --from-literal=url=BIG-IP_URL
 ```
